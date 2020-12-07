@@ -1,0 +1,27 @@
+#formCadastro {
+	display: flex;
+	flex-direction: column;
+}
+
+#formCadastro input {
+	margin: 10px 0;
+}
+
+#formCadastro button {
+	padding: 10px;
+	font-size: 1rem;
+	border: none;
+	background-color: #9c4dcc;
+	color: #FFF;
+}
+
+#formCadastro a {
+	text-decoration: none;
+}
+
+#formCadastro input {
+	padding: 5px;
+	display: block;
+	font-size: 1rem;
+}
+

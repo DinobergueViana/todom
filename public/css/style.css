@@ -11,6 +11,8 @@ body {
 	padding: 30px;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	height: 100%;
 	background-color: #6a1b9a;
 	color: #FFF;
@@ -77,6 +79,10 @@ main {
 	display: block;
 	font-size: .7rem;
 	border: none;
+}
+
+span {
+	margin-top: 20px;
 }
 
 table{
