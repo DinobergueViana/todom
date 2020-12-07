@@ -1,5 +1,8 @@
 const { Usuario } = require('../models');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
+require('dotenv').config();
 
 
 module.exports = {
@@ -10,7 +13,6 @@ module.exports = {
 
         // buscar o usuario no BD que tem esse email vindo do req.body
         usuario = await Usuario.findOne({where: {email}});
-        console.log(usuario)
 
         // retornar erro 401 caso o usuario não exista
         if(!usuario){
@@ -23,8 +25,10 @@ module.exports = {
             return res.status(401).json({error: 'Usuario ou senha inválido'})
         } 
 
-        //...
+        // criar token
+        let token = jwt.sign({usuario}, process.env.SEGREDO);
 
-        res.send('Login validado');
+        // enviar token para o cliente
+        return res.send({usuario, token})
     }
 }
